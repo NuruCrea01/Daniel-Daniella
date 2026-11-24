@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Daniel &amp; Daniella – Invitation de mariage</title>
+<meta name="description" content="Vous êtes invités au mariage de Daniel & Daniella.">
+<meta name="theme-color" content="#3a2318">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+<script>
+/* ============ ✏️ TEXTES À MODIFIER ICI ============ */
+const SITE = {
+  initiales: "D&D",
+  marie: "Daniel", mariee: "Daniella",
+  dateISO: "2012-12-12T14:00:00",          // pour le compte à rebours (AAAA-MM-JJTHH:MM:SS)
+  dateTexte: "12 décembre 2012",
+  accroche: "Nous avons la joie de vous convier à célébrer le plus beau jour de notre vie.",
+  accueil: "Avec amour, nous vous invitons à partager notre mariage.",
+  photoAccueil: "photos/accueil.jpg",
+  histoire: [
+    { titre: "La rencontre", date: "Il y a longtemps…", texte: "Un regard, un sourire, et le sentiment que quelque chose commençait. Racontez ici votre première rencontre." },
+    { titre: "Le premier rendez-vous", date: "Quelques semaines plus tard", texte: "Un moment simple, des heures qui passent sans qu’on les voie. Racontez ici votre premier rendez-vous." },
+    { titre: "La demande en mariage", date: "Le grand « oui »", texte: "Un instant suspendu, des larmes de joie, et la plus belle des réponses. Racontez ici la demande." }
+  ],
+  galerie: ["photos/photo1.jpg","photos/photo2.jpg","photos/photo3.jpg","photos/photo4.jpg","photos/photo5.jpg","photos/photo6.jpg"],
+  programme: [
+    { h: "13h00", t: "Accueil des invités", d: "Installation et premières retrouvailles" },
+    { h: "14h00", t: "Cérémonie", d: "L’échange des vœux et des alliances" },
+    { h: "16h00", t: "Séance photos", d: "Les souvenirs de famille et d’amis" },
+    { h: "18h00", t: "Repas", d: "Un dîner partagé dans la joie" },
+    { h: "21h00", t: "Remerciements", d: "Quelques mots avant de clôturer la soirée" }
+  ],
+  lieuNom: "Baraka", adresse: "N°12, Av. River side, Q/le Battant", ville: "Lubumbashi",
+  dressCode: "Élégant : tenues dans les tons crème, terracotta et brun. Évitez le blanc, réservé à la mariée.",
+  couleurs: [ {nom:"Crème", hex:"#f1e4cd"}, {nom:"Terracotta", hex:"#b9583a"}, {nom:"Brun profond", hex:"#3a2318"} ],
+  dateLimite: "1er décembre 2012",
+  whatsapp: "243000000000",                 // numéro WhatsApp avec indicatif, sans + ni espaces
+  messageWhatsapp: "Bonjour Daniel & Daniella, je confirme ma présence à votre mariage du 12 décembre 2012.\nNom : \nNombre de personnes : ",
+  hashtag: "#DanielEtDaniella"
+};
+/* =================================================== */
+</script>
+
+<style>
+:root{--cr:#f6eee0;--cr2:#ecdfca;--tc:#b9583a;--tcd:#9a4529;--br:#3a2318;--brs:#6b4a3a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Jost,sans-serif;font-weight:300;background:var(--cr);color:var(--br);line-height:1.75;overflow-x:hidden}
+body.lock{overflow:hidden;height:100%}
+img{max-width:100%;display:block}
+.script{font-family:'Pinyon Script',cursive;font-weight:400}
+.kick{font-family:Cinzel,serif;font-size:.78rem;letter-spacing:.32em;color:var(--tc);text-transform:uppercase;display:block;margin-bottom:.8rem}
+h2{font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(1.9rem,7vw,3rem);line-height:1.2;margin-bottom:1.4rem}
+section{padding:clamp(4.5rem,13vw,8rem) 1.5rem;text-align:center}
+.wrap{max-width:640px;margin:0 auto}
+.btn{display:inline-block;font:500 .85rem Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--cr);background:var(--tc);border:1px solid var(--tc);padding:1rem 2rem;border-radius:2px;cursor:pointer;transition:background .6s ease,color .6s ease}
+.btn:hover,.btn:focus-visible{background:var(--br);border-color:var(--br)}
+.btn:focus-visible{outline:2px solid var(--tc);outline-offset:3px}
+.alt{background:var(--cr2)}
+.orn{width:60px;height:1px;background:var(--tc);margin:1.6rem auto}
+
+/* Animations d'apparition */
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1.3s ease,transform 1.3s ease}
+.rv.in{opacity:1;transform:none}
+.split .w{display:inline-block;opacity:0;transform:translateY(.55em);transition:opacity 1.2s ease,transform 1.2s ease}
+.split.in .w{opacity:1;transform:none}
+
+/* Enveloppe */
+#intro{position:fixed;inset:0;z-index:99;background:radial-gradient(circle at 50% 40%,#4b2e21,#25150d);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5.5rem;transition:opacity 1.5s ease,visibility 1.5s}
+#intro.hide{opacity:0;visibility:hidden}
+.env{position:relative;width:min(84vw,340px);aspect-ratio:3/2;filter:drop-shadow(0 22px 28px rgba(0,0,0,.4));perspective:900px}
+.eb{position:absolute;inset:0;background:#9a4529;border-radius:3px}
+.card{position:absolute;left:6%;right:6%;top:6%;bottom:6%;background:var(--cr);z-index:2;text-align:center;padding-top:.9rem;border:1px solid #d9c4a3;transition:transform 1.6s cubic-bezier(.4,0,.2,1) 1s}
+.card small{font:400 .55rem Cinzel,serif;letter-spacing:.25em;text-transform:uppercase;color:var(--tc);display:block}
+.card b{font:400 2rem 'Pinyon Script',cursive;color:var(--br)}
+.ef{position:absolute;inset:0;background:var(--tc);z-index:3;border-radius:3px;clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%)}
+.fl{position:absolute;left:0;right:0;top:0;height:58%;background:#c4623f;z-index:4;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform 1.2s ease .2s,z-index 0s .8s}
+.seal{position:absolute;left:50%;top:58%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;z-index:5;background:radial-gradient(circle at 35% 30%,#a8402e,#5e1d14);box-shadow:0 3px 8px rgba(0,0,0,.45),inset 0 0 0 3px rgba(255,255,255,.08);display:grid;place-items:center;font:500 .8rem Cinzel,serif;color:#f0d9b5;transition:opacity .7s ease,transform .7s ease}
+.env.open .fl{transform:rotateX(180deg);z-index:1}
+.env.open .seal{opacity:0;transform:scale(1.35)}
+.env.open .card{transform:translateY(-64%)}
+
+/* Accueil */
+#site{opacity:0;transition:opacity 1.8s ease}
+#site.show{opacity:1}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;color:var(--cr);overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(rgba(37,21,13,.5),rgba(37,21,13,.72))}
+.hero .wrap{position:relative;z-index:2;max-width:760px}
+.hero .kick{color:#e7c9a6}
+.names{font-size:clamp(3.4rem,16vw,7.5rem);line-height:1.05}
+.names i{font-style:normal;color:#d98a68;padding:0 .1em}
+.hero p.s{font-size:1.1rem;margin:1.2rem auto;max-width:30em}
+.date{font:400 1rem Cinzel,serif;letter-spacing:.3em;text-transform:uppercase}
+.cd{display:flex;justify-content:center;gap:clamp(.5rem,3vw,1.5rem);margin-top:2rem}
+.cd div{min-width:64px;padding:.7rem .3rem;border:1px solid rgba(246,238,224,.4);background:rgba(37,21,13,.35)}
+.cd b{display:block;font:400 clamp(1.6rem,7vw,2.4rem) 'Bodoni Moda',serif;line-height:1.1}
+.cd span{font:400 .62rem Cinzel,serif;letter-spacing:.2em;text-transform:uppercase}
+
+/* Histoire */
+.tl{position:relative;text-align:left;padding-left:2.4rem;margin-top:2.5rem}
+.tl::before,.tl .ln{content:"";position:absolute;left:.45rem;top:0;bottom:0;width:2px;background:rgba(185,88,58,.2)}
+.tl .ln{background:var(--tc);transform-origin:top;transform:scaleY(var(--p,0))}
+.ev{position:relative;margin-bottom:2.6rem}
+.ev::before{content:"";position:absolute;left:-2.4rem;top:.5rem;width:.95rem;height:.95rem;border-radius:50%;background:var(--cr);border:2px solid var(--tc);transition:background 1s ease}
+.ev.in::before{background:var(--tc)}
+.ev h3{font:400 1.5rem 'Bodoni Moda',serif}
+.ev em{font:400 .75rem Cinzel,serif;letter-spacing:.18em;color:var(--tc);font-style:normal}
+
+/* Galerie */
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;max-width:980px;margin:2.5rem auto 0}
+.par{position:relative;overflow:hidden;aspect-ratio:3/4;background:var(--cr2)}
+.par:nth-child(even){margin-top:2.5rem}
+.par img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover;will-change:transform}
+@media(min-width:760px){.gal{grid-template-columns:repeat(3,1fr);gap:1.2rem}.par:nth-child(even){margin-top:0}.par:nth-child(3n+2){margin-top:3rem}}
+
+/* Programme */
+.prog{text-align:left;margin-top:2rem}
+.pr{display:grid;grid-template-columns:4.6rem 1fr;gap:1.2rem;padding:1.2rem 0;border-bottom:1px solid rgba(58,35,24,.15)}
+.pr b{font:500 1.05rem Cinzel,serif;color:var(--tc)}
+.pr h3{font:400 1.35rem 'Bodoni Moda',serif;line-height:1.3}
+.pr p{font-size:.95rem;color:var(--brs)}
+
+/* Lieu */
+.map{width:100%;height:320px;border:0;margin:1.8rem 0;filter:sepia(.35)}
+.adr{font-size:1.1rem}
+.adr b{display:block;font:400 1.5rem 'Bodoni Moda',serif}
+
+/* Tenue */
+.sw{display:flex;justify-content:center;gap:1.6rem;margin-top:2rem}
+.sw div{font:400 .7rem Cinzel,serif;letter-spacing:.14em;text-transform:uppercase}
+.sw i{display:block;width:62px;height:62px;border-radius:50%;margin:0 auto .6rem;border:1px solid rgba(58,35,24,.25)}
+
+/* Présence + pied */
+.dl{font:400 .8rem Cinzel,serif;letter-spacing:.2em;margin-top:1.4rem;color:var(--brs)}
+footer{background:var(--br);color:var(--cr);text-align:center;padding:5rem 1.5rem calc(4rem + env(safe-area-inset-bottom,0px))}
+footer .ini{font-size:3.4rem;color:#d98a68;line-height:1}
+footer p{margin:.8rem 0}
+footer .tag{font:400 .85rem Cinzel,serif;letter-spacing:.25em;color:#e7c9a6}
+
+@media (prefers-reduced-motion:reduce){
+ *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+ .rv,.split .w{opacity:1;transform:none}
+}
+</style>
+</head>
+<body class="lock">
+
+<div id="intro">
+  <div class="env" id="env">
+    <div class="eb"></div>
+    <div class="card"><small>Vous êtes invités</small><b id="cardNames"></b></div>
+    <div class="ef"></div><div class="fl"></div>
+    <div class="seal" id="seal"></div>
+  </div>
+  <button class="btn" id="open" type="button">Ouvrir notre invitation</button>
+</div>
+
+<main id="site"></main>
+
+<script>
+const S = SITE, $ = (s, e = document) => e.querySelector(s);
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const names = `${S.marie} <i>&amp;</i> ${S.mariee}`;
+$('#cardNames').innerHTML = names;
+$('#seal').textContent = S.initiales.replace('&amp;', '&');
+
+const maps = encodeURIComponent(`${S.lieuNom}, ${S.adresse}, ${S.ville}`);
+const wa = `https://wa.me/${S.whatsapp}?text=${encodeURIComponent(S.messageWhatsapp)}`;
+
+$('#site').innerHTML = `
+<section class="hero" id="accueil">
+  <img src="${S.photoAccueil}" alt="${S.marie} et ${S.mariee}">
+  <div class="wrap">
+    <span class="kick rv">Nous nous marions</span>
+    <h1 class="names script rv" style="transition-delay:.2s">${names}</h1>
+    <p class="s rv" style="transition-delay:.4s">${S.accueil}</p>
+    <p class="date rv" style="transition-delay:.5s">${S.dateTexte}</p>
+    <div class="cd rv" style="transition-delay:.7s" id="cd" aria-live="off">
+      <div><b data-u="d">0</b><span>Jours</span></div><div><b data-u="h">0</b><span>Heures</span></div>
+      <div><b data-u="m">0</b><span>Minutes</span></div><div><b data-u="s">0</b><span>Secondes</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="histoire"><div class="wrap">
+  <span class="kick rv">Depuis le début</span>
+  <h2 class="split">Notre histoire</h2>
+  <p class="rv">${S.accroche}</p>
+  <div class="tl" id="tl"><div class="ln"></div>
+    ${S.histoire.map(e => `<div class="ev rv"><em>${e.date}</em><h3>${e.titre}</h3><p>${e.texte}</p></div>`).join('')}
+  </div>
+</div></section>
+
+<section class="alt" id="galerie"><div class="wrap">
+  <span class="kick rv">Souvenirs</span>
+  <h2 class="split">Galerie</h2></div>
+  <div class="gal">${S.galerie.map((p, i) => `<figure class="par rv" style="transition-delay:${(i % 3) * .15}s"><img src="${p}" alt="Photo ${i + 1} de ${S.marie} et ${S.mariee}" loading="lazy"></figure>`).join('')}</div>
+</section>
+
+<section id="programme"><div class="wrap">
+  <span class="kick rv">Le jour J</span>
+  <h2 class="split">Le programme</h2>
+  <div class="prog">${S.programme.map(p => `<div class="pr rv"><b>${p.h}</b><div><h3>${p.t}</h3><p>${p.d}</p></div></div>`).join('')}</div>
+</div></section>
+
+<section class="alt" id="lieu"><div class="wrap">
+  <span class="kick rv">Où nous retrouver</span>
+  <h2 class="split">Le lieu</h2>
+  <p class="adr rv"><b>${S.lieuNom}</b>${S.adresse}<br>${S.ville}</p>
+  <iframe class="map rv" title="Carte Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=${maps}&output=embed"></iframe>
+  <a class="btn rv" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${maps}">Ouvrir l’itinéraire</a>
+</div></section>
+
+<section id="tenue"><div class="wrap">
+  <span class="kick rv">Dress code</span>
+  <h2 class="split">Tenue</h2>
+  <p class="rv">${S.dressCode}</p>
+  <div class="sw rv">${S.couleurs.map(c => `<div><i style="background:${c.hex}"></i>${c.nom}</div>`).join('')}</div>
+</div></section>
+
+<section class="alt" id="presence"><div class="wrap">
+  <span class="kick rv">Réponse souhaitée</span>
+  <h2 class="split">Confirmer ma présence</h2>
+  <p class="rv">Votre présence nous comblerait de joie. Merci de nous répondre avant le ${S.dateLimite}.</p>
+  <div class="orn"></div>
+  <a class="btn rv" target="_blank" rel="noopener" href="${wa}">Confirmer sur WhatsApp</a>
+  <p class="dl rv">Date limite : ${S.dateLimite}</p>
+</div></section>
+
+<footer>
+  <p class="ini script rv">${S.initiales}</p>
+  <h2 class="split" style="font-size:clamp(1.5rem,5vw,2.2rem);margin:1rem 0">Merci de faire partie de notre histoire</h2>
+  <p class="tag rv">${S.hashtag}</p>
+</footer>`;
+
+/* Compte à rebours */
+const target = new Date(S.dateISO).getTime();
+function tick() {
+  let diff = Math.max(0, target - Date.now()) / 1000;
+  const v = { d: Math.floor(diff / 86400), h: Math.floor(diff % 86400 / 3600), m: Math.floor(diff % 3600 / 60), s: Math.floor(diff % 60) };
+  for (const k in v) $(`[data-u=${k}]`).textContent = String(v[k]).padStart(2, '0');
+}
+tick(); setInterval(tick, 1000);
+
+/* Titres mot par mot */
+document.querySelectorAll('.split').forEach(el => {
+  el.innerHTML = el.textContent.trim().split(/\s+/).map((w, i) => `<span class="w" style="transition-delay:${i * .13}s">${w}</span>`).join(' ');
+});
+
+/* Apparitions + défilement */
+function startReveal() {
+  const els = document.querySelectorAll('.rv,.split');
+  if (reduce || !('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); }
+  else {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
+    els.forEach(e => io.observe(e));
+  }
+  const tl = $('#tl'), pars = [...document.querySelectorAll('.par')];
+  let busy = false;
+  function onScroll() {
+    busy = false;
+    const r = tl.getBoundingClientRect();
+    tl.style.setProperty('--p', reduce ? 1 : Math.min(1, Math.max(0, (innerHeight * .7 - r.top) / r.height)));
+    if (reduce) return;
+    pars.forEach(f => {
+      const b = f.getBoundingClientRect();
+      f.firstChild.style.transform = `translateY(${(b.top + b.height / 2 - innerHeight / 2) * -.07}px)`;
+    });
+  }
+  addEventListener('scroll', () => { if (!busy) { busy = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  addEventListener('resize', onScroll);
+  onScroll();
+}
+
+/* Ouverture de l'enveloppe */
+$('#open').addEventListener('click', e => {
+  e.target.disabled = true; e.target.style.opacity = 0; e.target.style.transition = 'opacity .6s';
+  $('#env').classList.add('open');
+  setTimeout(() => {
+    $('#intro').classList.add('hide');
+    $('#site').classList.add('show');
+    document.body.classList.remove('lock');
+    window.scrollTo(0, 0);
+    startReveal();
+  }, reduce ? 300 : 3700);
+});
+</script>
+</body>
+</html>
